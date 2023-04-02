@@ -14,6 +14,7 @@ import (
 func main() {
 
 	start := time.Now()
+
 	timer1 := time.NewTimer(time.Second * 2)
 
 	<-timer1.C
