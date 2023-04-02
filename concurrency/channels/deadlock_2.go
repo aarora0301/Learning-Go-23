@@ -8,5 +8,6 @@ func main() {
 
 	messages <- "ping" // deadlock
 
+	// sender is ready but receiver is not // trying to send to a full channel
 	fmt.Println(<-messages)
 }

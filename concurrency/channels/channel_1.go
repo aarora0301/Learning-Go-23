@@ -8,8 +8,6 @@ func main() {
 
 	messages := make(chan string)
 
-	messages <- "ping"
-
 	go func() {
 		messages <- "ping"
 	}()
