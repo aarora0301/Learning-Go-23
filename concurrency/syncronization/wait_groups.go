@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// The go vet command examines Go source code and reports suspicious constructs.
 func main() {
 
 	var wg sync.WaitGroup
