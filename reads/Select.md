@@ -41,7 +41,7 @@ It's important to note that the select statement doesn't block indefinitely
 if no channel is ready and there is no default case. It will continue to evaluate the
 readiness of channels and proceed as soon as any channel becomes ready.
 
-``
+```
 select {
 case <-channel1:
 // Handle communication on channel1
@@ -53,4 +53,4 @@ default:
 // Handle the case when no channel is ready for communication
 }
 
-``
+```
