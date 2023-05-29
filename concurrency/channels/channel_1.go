@@ -9,8 +9,13 @@ func main() {
 	messages := make(chan string)
 
 	go func() {
-		messages <- "ping"
+		for {
+			messages <- "ping"
+
+		}
 	}()
 
+	fmt.Println(<-messages)
+	fmt.Println(<-messages)
 	fmt.Println(<-messages)
 }
