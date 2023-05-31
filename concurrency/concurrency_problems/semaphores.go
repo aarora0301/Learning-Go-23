@@ -1,5 +1,7 @@
 package concurrency_problems
 
+import "sync"
+
 type empty struct{}
 
 type semaphore chan empty
@@ -22,6 +24,13 @@ func (s semaphore) V(n int) {
 // implement mutexes
 func (s semaphore) Lock() {
 	s.P(1)
+	var sg *sync.Cond
+	var lock sync.Mutex
+	lock = sync.Mutex{}
+	sg = sync.NewCond(&lock)
+
+	sg.Signal()
+	sg.Wait()
 }
 
 func (s semaphore) Unlock() {
